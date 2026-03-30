@@ -1,8 +1,4 @@
 from pathlib import Path
-import textwrap
-
-script = r'''
-from pathlib import Path
 import numpy as np
 import pandas as pd
 import openpyxl
@@ -86,8 +82,6 @@ def simulate_final_balances(
     Assumption used here:
     - Each month's contribution is invested at the beginning of the month
     - Then that month's return is applied
-
-    This matches a typical monthly investment setup and is easy to explain.
     """
     rng = np.random.default_rng(seed)
 
@@ -200,22 +194,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-'''
-
-requirements = """numpy
-pandas
-openpyxl
-scipy
-matplotlib
-"""
-
-readme_snippet = """# Retirement Monte Carlo Simulation
-
-This project runs a Monte Carlo simulation for a retirement planning assignment.
-
-## Setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
